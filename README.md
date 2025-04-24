@@ -1,7 +1,3 @@
-Ecco la traduzione completa in inglese del tuo testo:
-
----
-
 # DNS Analysis Tool 🔍
 
 A Python-based tool for analyzing DNS configurations and detecting potential security risks.
