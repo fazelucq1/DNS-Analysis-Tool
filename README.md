@@ -1,95 +1,71 @@
 # DNS Analysis Tool 🔍
 
-A Python-based tool for analyzing DNS configurations and detecting potential security risks.
+[![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-
+A Python-based DNS analysis tool for security checks and configuration validation.
 
 ## Features ✨
-- Comprehensive DNS record analysis (A, AAAA, MX, CNAME, NS, TXT, SOA)
-- Subdomain takeover vulnerability detection
-- DNS configuration comparison between domains
+- Full DNS record analysis (A, AAAA, MX, CNAME, NS, TXT, SOA)
+- Subdomain takeover detection
+- Multi-domain comparison
 - PDF/HTML report generation
-- DNSSEC validation check
+- DNSSEC validation
 - SPF record verification
 
 ## Installation ⚙️
 
-**Prerequisites:**
-- Python 3.8+
-- pip
-
-**Steps:**
 ```bash
 git clone https://github.com/fazelucq1/DNS-Analysis-Tool.git
-cd dns-analysis-tool
-pip install -r requirements.txt
-python setup.py install
+cd DNS-Analysis-Tool
+python -m venv venv
+source venv/bin/activate  # Linux/macOS
+# venv\Scripts\activate   # Windows
+pip install -e .
 ```
 
 ## Usage 🚀
 
-**Basic analysis:**
+Basic analysis:
 ```bash
 dnsanalyze example.com
 ```
 
-**Generate HTML report:**
+Generate HTML report:
 ```bash
 dnsanalyze example.com -f html -o report.html
 ```
 
-**Compare two domains:**
+Compare domains:
 ```bash
 dnsanalyze example.com -c example.org -o comparison.pdf
 ```
 
-**Verbose output:**
-```bash
-dnsanalyze example.com -v
-```
-
-## Command Options 📋
-| Option | Description |
-|--------|-------------|
-| `-o`, `--output` | Output file path |
-| `-f`, `--format` | Report format (html/pdf) |
-| `-c`, `--compare` | Domain to compare with |
-| `-v`, `--verbose` | Show detailed analysis |
-
-## Development 🛠️
-1. Fork the repository
-2. Create a feature branch
-3. Submit a PR
-
-Run tests:
-```bash
-pytest tests/
-```
-
 ## Contributing 🤝
-- Add new DNS record checks
-- Improve report templates
-- Add more vulnerability patterns
-- Implement API integrations
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ## License 📄
-MIT License - see [LICENSE](LICENSE) for details
+Distributed under the MIT License. See `LICENSE` for more information.
 
----
+## Contact 📧
+Luca - luca.crippa05@gmail.com
 
-This complete structure includes:
-- Advanced DNS record management
-- Reporting system with HTML/PDF templates
-- Domain comparison functionality
-- Unit tests
-- Setup script via `setup.py`
-- Full documentation in the README
-- Error handling
-- Basic vulnerability detection
+```
 
-To fully complete the project (100%), it would be necessary to:
-1. Implement real HTTP checks for subdomain takeover
-2. Add more templates for PDF reports
-3. Implement caching for DNS queries
-4. Add support for multiple nameservers
-5. Implement full DNSSEC checking
+**Per completare la configurazione:**
+
+1. Crea una cartella `screenshots` per le immagini del README
+2. Aggiungi un file `LICENSE` con la licenza MIT
+3. Crea una cartella `examples` con report di esempio
+
+Per testare localmente:
+```bash
+# In ambiente virtuale
+dnsanalyze google.com -v
+dnsanalyze github.com -f html -o github_report.html
+```
+
