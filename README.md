@@ -26,7 +26,7 @@ dnsanalyze example.com
 ```
 
 Full scan with bruteforce:
-```bash
+```
 dnsanalyze example.com -w wordlists/subdomains.txt -o report.html
 ```
 
@@ -37,10 +37,10 @@ Options:
 
 ## Sample Wordlist
 Included common subdomains in `wordlists/` directory
-```
+
 
 **Per utilizzare**:
-```bash
+```
 # Scan veloce
 dnsanalyze example.com
 
@@ -49,4 +49,4 @@ dnsanalyze example.com -w wordlists/subdomains.txt -o report.html -t 100
 
 # Genera solo report
 dnsanalyze example.com -o report.html
-```
+
