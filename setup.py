@@ -12,11 +12,11 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'dnsanalyze = main:main'
+            'dnsanalyze = dns_analyzer.main:main'
         ]
     },
-    include_package_data=True,
     package_data={
         'dns_analyzer': ['templates/*.html']
-    }
+    },
+    include_package_data=True,
 )
