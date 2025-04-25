@@ -1,12 +1,16 @@
+import os
+import pkg_resources
 from reportlab.lib.pagesizes import letter
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table
 from reportlab.lib.styles import getSampleStyleSheet
 from jinja2 import Environment, FileSystemLoader
-import os
-from pathlib import Path
+
+def get_template_path():
+    return pkg_resources.resource_filename('dns_analyzer', 'templates')
 
 def generate_report(domain, analysis, risks, format, output, comparison=None, verbose=False):
-    env = Environment(loader=FileSystemLoader('templates'))
+    template_dir = get_template_path()
+    env = Environment(loader=FileSystemLoader(template_dir))
     
     if format == 'html':
         template = env.get_template('report_template.html')
@@ -19,7 +23,7 @@ def generate_report(domain, analysis, risks, format, output, comparison=None, ve
         )
         with open(output, 'w') as f:
             f.write(html_content)
-            
+    
     elif format == 'pdf':
         doc = SimpleDocTemplate(output, pagesize=letter)
         styles = getSampleStyleSheet()
@@ -39,6 +43,3 @@ def generate_report(domain, analysis, risks, format, output, comparison=None, ve
                 elements.append(Paragraph(f"• {risk}", styles['Normal']))
         
         doc.build(elements)
-
-def create_output_dir():
-    Path("reports").mkdir(exist_ok=True)
