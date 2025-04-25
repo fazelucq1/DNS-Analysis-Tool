@@ -1,7 +1,7 @@
 import argparse
-from dns_analyzer.dns_queries import get_dns_records
-from dns_analyzer.analysis import analyze_dns, check_subdomain_takeover
-from dns_analyzer.reporter import generate_report
+from .dns_queries import get_dns_records
+from .analysis import analyze_dns, check_subdomain_takeover
+from .reporter import generate_report
 
 def compare_domains(domain1, domain2):
     records1 = get_dns_records(domain1)
@@ -44,7 +44,7 @@ def main():
         comparison = None
         if args.compare:
             comparison = compare_domains(args.domain, args.compare)
-    
+        
         if args.output:
             generate_report(
                 args.domain,
