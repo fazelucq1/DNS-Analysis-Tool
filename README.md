@@ -20,7 +20,7 @@ A Python-based tool for analyzing DNS configurations and detecting potential sec
 
 **Steps:**
 ```bash
-git clone [https://github.com/yourusername/dns-analysis-tool.git](https://github.com/fazelucq1/DNS-Analysis-Tool.git)
+git clone https://github.com/fazelucq1/DNS-Analysis-Tool.git
 cd dns-analysis-tool
 pip install -r requirements.txt
 python setup.py install
