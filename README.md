@@ -5,6 +5,9 @@
 
 Advanced DNS scanner with subdomain bruteforcing and professional reporting.
 
+![image](https://github.com/user-attachments/assets/396f6a43-3445-4109-9637-2e4132b01dce)
+
+
 ## Features
 - Full DNS record scanning (like dig)
 - Subdomain bruteforce with wordlists
@@ -49,4 +52,5 @@ dnsanalyze example.com -w wordlists/subdomains.txt -o report.html -t 100
 
 # Genera solo report
 dnsanalyze example.com -o report.html
+
 
