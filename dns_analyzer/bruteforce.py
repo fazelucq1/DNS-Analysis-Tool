@@ -1,3 +1,4 @@
+from typing import List
 from .scanner import DNSScanner
 from tqdm import tqdm
 import concurrent.futures
