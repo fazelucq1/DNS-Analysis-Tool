@@ -3,6 +3,10 @@ from .dns_queries import get_dns_records
 from .analysis import analyze_dns, check_subdomain_takeover
 from .reporter import generate_report
 
+def generate_report(domain, analysis, risks, format, output, comparison=None, verbose=False):
+    try:
+        analysis['generated_at'] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
 def compare_domains(domain1, domain2):
     records1 = get_dns_records(domain1)
     records2 = get_dns_records(domain2)
