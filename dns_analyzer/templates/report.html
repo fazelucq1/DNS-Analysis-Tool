@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNS Report - {{ domain }}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+    <div class="container mx-auto px-4 py-8">
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <h1 class="text-3xl font-bold text-gray-800 mb-4">
+                DNS Report for <span class="text-blue-600">{{ domain }}</span>
+            </h1>
+            <p class="text-gray-500 text-sm">
+                Generated at {{ timestamp }}
+            </p>
+        </div>
+
+        <!-- DNS Records Section -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <h2 class="text-xl font-semibold text-gray-700 mb-4">DNS Records</h2>
+            <div class="space-y-4">
+                {% for record, values in records.items() %}
+                <div class="border-l-4 border-blue-500 pl-4">
+                    <h3 class="font-mono text-gray-800 font-medium">{{ record }}</h3>
+                    <div class="ml-4 mt-2 space-y-1">
+                        {% for value in values %}
+                        <div class="text-gray-600 text-sm font-mono bg-gray-50 p-2 rounded">
+                            {{ value }}
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Subdomains Section -->
+        {% if subdomains %}
+        <div class="bg-white rounded-lg shadow-lg p-6">
+            <h2 class="text-xl font-semibold text-gray-700 mb-4">Found Subdomains ({{ subdomains|length }})</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+                {% for sub in subdomains %}
+                <div class="bg-green-50 p-3 rounded-lg border border-green-200">
+                    <span class="font-mono text-green-700">{{ sub }}</span>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
