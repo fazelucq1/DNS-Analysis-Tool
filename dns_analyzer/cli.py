@@ -25,7 +25,7 @@ def main():
         subdomains = bruteforcer.run(args.domain)
   
     if args.output:
-        env = Environment(loader=FileSystemLoader(os.path.join(os.path.dirname(__file__), 'templates'))
+        env = Environment(loader=FileSystemLoader(os.path.join(os.path.dirname(__file__), 'templates')))
         template = env.get_template('report.html')
         
         html = template.render(
