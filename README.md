@@ -5,7 +5,6 @@
 
 A Python-based DNS analysis tool for security checks and configuration validation.
 
-![Demo Screenshot](https://raw.githubusercontent.com/fazelucq1/DNS-Analysis-Tool/main/screenshots/demo.png)
 
 ## Features ✨
 - Full DNS record analysis (A, AAAA, MX, CNAME, NS, TXT, SOA)
