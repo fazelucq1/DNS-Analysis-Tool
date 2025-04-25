@@ -24,8 +24,4 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    package_data={
-        'dns_analyzer': ['templates/*.html']
-    },
-    include_package_data=True,
 )
