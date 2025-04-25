@@ -1,3 +1,4 @@
+from typing import Dict, List
 import dns.resolver
 from typing import Dict, List
 
