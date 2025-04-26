@@ -17,8 +17,8 @@ Advanced DNS scanner with subdomain bruteforcing and professional reporting.
 
 ## Install
 ```bash
-git clone https://github.com/fazelucq1/DNS-Analysis-Tool.git
-cd DNS-Analysis-Tool
+git clone https://github.com/fazelucq1/DNSHawk.git
+cd DNSHawk
 pip install -e .
 ```
 
